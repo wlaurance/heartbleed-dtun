@@ -29,7 +29,7 @@ getDTUNHits(function(err, hits) {
     return h.url.indexOf('https') !== -1
   });
 
-  var urlOnly = _.map(httpsOnly, function(h) {
+  var urlOnly = _.map(hits, function(h) {
     return url.parse(h.url);
   });
 
