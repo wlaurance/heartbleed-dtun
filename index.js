@@ -16,9 +16,10 @@ function getDTUNHits(cb) {
 
 function makeHeartBleedTest(url, cb) {
   request("http://bleed-1161785939.us-east-1.elb.amazonaws.com/bleed/" + url, {json:true}, function(e,r,b) {
-    if (b.code === 0) {
+    if (b && b.code === 0) {
       console.log(url + " is vulnerable to heartbleed attack")
     }
+    cb()
   });
 }
 
